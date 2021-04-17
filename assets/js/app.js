@@ -17,7 +17,7 @@ usernameInput.addEventListener('keyup', (event) => {
 
                 } else {
                     ui.showProfile(res.profile[0]);
-                    ui.showPosts(res.posts);
+                    ui.showPosts(res.posts,res.profile[0]);
                 }
             })
             .catch(err => console.log(err));

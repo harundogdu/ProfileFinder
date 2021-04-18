@@ -101,7 +101,8 @@ class UI {
 
     clear() {
         this.result.innerHTML = "";
-        this.posts.innerHTML = "";
+        this.posts.innerHTML = "";        
+        this.todos.innerHTML = "";    
     }
     clearAlert() {
         this.alert.innerHTML = "";

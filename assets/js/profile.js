@@ -11,9 +11,14 @@ class Profile {
 
         let postsRespone = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${profile[0].id}`);
         let posts = await postsRespone.json();
+
+        let todosResponse = await fetch(`https://jsonplaceholder.typicode.com/todos?userId=${profile[0].id}`);
+        let todos = await todosResponse.json();
+
         return {
             profile,
-            posts
+            posts,
+            todos
         }
     }
 }

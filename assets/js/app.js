@@ -22,6 +22,7 @@ usernameInput.addEventListener('keyup', (event) => {
                     ui.showAlert(`${username} found!`,'success');
                     ui.showProfile(res.profile[0]);
                     ui.showPosts(res.posts, res.profile[0]);
+                    ui.showTodos(res.todos,res.profile[0]);
                 }
             })
             .catch(err => console.log(err));

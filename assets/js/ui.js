@@ -3,6 +3,7 @@ class UI {
         this.result = document.querySelector('#result');
         this.posts = document.querySelector('#posts');
         this.alert = document.querySelector('#alert');
+        this.todos = document.querySelector('#todos');
     }
 
     showProfile(data) {
@@ -53,7 +54,7 @@ class UI {
                 `
                     <div class="col-md-4 my-2">
                         <div class="card">
-                            <div class="card-header">${post.title}</div>
+                            <div class="card-header bg-info font-weight-bold text-white">${post.title}</div>
                             <div class="card-body">
                                 <p class="lead">${post.body}</p>
                             </div>
@@ -64,6 +65,34 @@ class UI {
         html += '</div></div>';
         this.posts.innerHTML += html;
     }
+
+    showTodos(data,profile){
+        let html =
+            `<div class="container">
+                <div class="row">
+                    <div class="col-md-12 justify-content-center">
+                    <h5 class="app-title text-center">Todos of ${profile.username}</h5><hr>
+                    </div>
+                </div>
+                <div class="row">
+            `;
+        data.forEach(todo => {
+            html +=
+                `
+                    <div class="col-md-4 my-2">
+                        <div class="card">
+                            <div class="card-header font-weight-bold text-white ${(todo.completed) == true ? "bg-success" : "bg-danger"}">${(todo.completed) == true ? "Completed" : "Not Complete"}</div>
+                            <div class="card-body">
+                                <p class="lead">${todo.title}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        });
+        html += '</div></div>';
+    this.todos.innerHTML = html;
+    }
+
 
     showAlert(message, alert) {
         let html = `<div class="text-${alert}">${message}</div>`;

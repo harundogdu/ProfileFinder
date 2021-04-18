@@ -1,0 +1,16 @@
+#userList{
+    color: #fff;
+    font-size: medium;
+    font-weight: 600;
+    background-color: #dc3545;
+    padding: 3px 6px;
+    border-radius: 5px;
+    text-decoration: none;    
+    border:1px solid #dc3545;
+    transition: all 300ms ease;
+}
+
+#userList:hover{
+    color: #dc3545;
+    background-color: #fff;
+}

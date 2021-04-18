@@ -2,6 +2,7 @@ class UI {
     constructor() {
         this.result = document.querySelector('#result');
         this.posts = document.querySelector('#posts');
+        this.alert = document.querySelector('#alert');
     }
 
     showProfile(data) {
@@ -63,4 +64,19 @@ class UI {
         html += '</div></div>';
         this.posts.innerHTML += html;
     }
+
+    showAlert(message, alert) {
+        let html = `<div class="text-${alert}">${message}</div>`;
+        this.alert.innerHTML = html;
+    }
+
+    clear() {
+        this.result.innerHTML = "";
+        this.posts.innerHTML = "";
+    }
+    clearAlert() {
+        this.alert.innerHTML = "";
+    }
+
+
 }
